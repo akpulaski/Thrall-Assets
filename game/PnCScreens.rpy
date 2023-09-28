@@ -15,6 +15,11 @@ screen undergroundCenterScene:
         xpos 900 
         ypos 50
         action[SetVariable("location", 4), Jump("selectScene")]
+    imagebutton: 
+        auto "nav/gear_%s.png"
+        xpos 50
+        ypos 50
+        action[Jump("showInventory")]
 
 screen undergroundLeftScene: 
     add environmentSM
@@ -28,6 +33,11 @@ screen undergroundLeftScene:
         xpos 900 
         ypos 50
         action[SetVariable("location", 4), Jump("selectScene")]
+    imagebutton: 
+        auto "nav/gear_%s.png"
+        xpos 50
+        ypos 50
+        action[Jump("showInventory")]
 
 screen undergroundRightScene: 
     add environmentSM
@@ -41,6 +51,11 @@ screen undergroundRightScene:
         xpos 900 
         ypos 50
         action[SetVariable("location", 4), Jump("selectScene")]
+    imagebutton: 
+        auto "nav/gear_%s.png"
+        xpos 50
+        ypos 50
+        action[Jump("showInventory")]
 
 screen bankScene: 
     add environmentSM
@@ -49,3 +64,18 @@ screen bankScene:
         xpos 50 
         ypos 500 
         action[SetVariable("location", 2), Jump("selectScene")]
+    imagebutton: 
+        auto "nav/gear_%s.png"
+        xpos 50
+        ypos 50
+        action[Jump("showInventory")]
+
+
+screen inventoryScene: 
+    add inventorySM 
+    imagebutton: 
+        auto "nav/gear_%s.png"
+        xpos 50 
+        ypos 50
+        action[Jump("selectScene")]
+

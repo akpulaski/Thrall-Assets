@@ -16,4 +16,14 @@ label selectScene:
     elif location == 4: 
         scene bank bg 
         jump setUpBank 
-    
+
+label showInventory: 
+    show inventory bg 
+    jump setUpInventory
+
+label inventoryInformation: 
+    if invItemSelected == 1: 
+        show photoDesc
+    else: 
+        hide photoDesc 
+    jump setUpInventory
