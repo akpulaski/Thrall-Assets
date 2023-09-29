@@ -59,21 +59,7 @@ init python:
                     t = Transform(child= item.idle_image, zoom = .75)
                     item.set_child(t)
                     inventorySM.redraw(0)
-        elif event.type == renpy.pygame_sdl2.MOUSEBUTTONUP: 
-            if event.button == 1: 
-                for item in inventorySprites: 
-                    if item.x <= x <= item.x + item.width and item.y <= y + item.height: 
-                        if item.type == "claw": 
-                            SetVariable("invItemSelected", 1)
-                        elif item.type == "photo": 
-                            renpy.show_screen("inspectInventory", "photo")
-                        elif item.type == "card": 
-                            SetVariable("invItemSelected", 3)
-                        elif item.type == "lock": 
-                            SetVariable("invItemSelected", 4)
-                        elif item.type == "key": 
-                            SetVariable("invItemSelected", 5)
-                        #renpy.jump("inventoryInformation")
+    
     
     def removeEnvironmentItem(item): 
         item.destroy()

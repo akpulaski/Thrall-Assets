@@ -20,10 +20,3 @@ label selectScene:
 label showInventory: 
     show inventory bg 
     jump setUpInventory
-
-label inventoryInformation: 
-    if invItemSelected == 1: 
-        show photoDesc
-    else: 
-        hide photoDesc 
-    jump setUpInventory

@@ -125,8 +125,8 @@ label setUpUndergroundRight:
                     environmentSprites[-1].width = 100
                     environmentSprites[-1].height = 100
                 elif item == "rock3": 
-                    environmentSprites[-1].x = 300
-                    environmentSprites[-1].y = 400 
+                    environmentSprites[-1].x = 600
+                    environmentSprites[-1].y = 600x 
                     environmentSprites[-1].width = 100 
                     environmentSprites[-1].height = 100 
 
