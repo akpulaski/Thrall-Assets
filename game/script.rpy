@@ -20,3 +20,4 @@ label selectScene:
 label showInventory: 
     show inventory bg 
     jump setUpInventory
+

@@ -72,10 +72,10 @@ screen bankScene:
 
 
 screen inventoryScene: 
-    add inventorySM 
+    add inventorySM
+
     imagebutton: 
         auto "nav/gear_%s.png"
         xpos 50 
         ypos 50
         action[Jump("selectScene")]
-

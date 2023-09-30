@@ -60,7 +60,6 @@ init python:
                     item.set_child(t)
                     inventorySM.redraw(0)
     
-    
     def removeEnvironmentItem(item): 
         item.destroy()
         environmentItemsDeleted.append(item.type)

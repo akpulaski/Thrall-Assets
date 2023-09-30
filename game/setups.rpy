@@ -1,6 +1,6 @@
 label generalSetUp: 
     default location = 2
-    default invItemSelected = 1 
+    default info = 1  
 
     python: 
         #Disables rollback because it messes with inventory system.
@@ -18,6 +18,12 @@ label generalSetUp:
         environmentItemNames = []
         inventoryItemNames = ["Key", "Lock", "Card", "Claw", "Photo"]
         environmentItemsDeleted = []
+
+        hasPhoto = False 
+        hasKey = False 
+        hasCard = False 
+        hasClaw = False 
+        hasLock = False 
 
         
 
@@ -125,8 +131,8 @@ label setUpUndergroundRight:
                     environmentSprites[-1].width = 100
                     environmentSprites[-1].height = 100
                 elif item == "rock3": 
-                    environmentSprites[-1].x = 600
-                    environmentSprites[-1].y = 600x 
+                    environmentSprites[-1].x = 1500
+                    environmentSprites[-1].y = 950 
                     environmentSprites[-1].width = 100 
                     environmentSprites[-1].height = 100 
 
@@ -162,7 +168,7 @@ label setUpBank:
     call screen bankScene
 
 label setUpInventory: 
-
+    
     python: 
         for item in inventoryItems:
             idle_image = Image("items/{}_idle.png".format(item))
@@ -177,27 +183,33 @@ label setUpInventory:
                 inventorySprites[-1].y = 300 
                 inventorySprites[-1].width = 150 
                 inventorySprites[-1].height = 150 
+                hasLock = True 
             elif item == "key": 
                 inventorySprites[-1].x = 600
                 inventorySprites[-1].y = 300 
                 inventorySprites[-1].width = 150 
                 inventorySprites[-1].height = 150 
+                hasKey = True 
             elif item == "card": 
                 inventorySprites[-1].x = 350 
                 inventorySprites[-1].y = 500 
                 inventorySprites[-1].width = 150 
                 inventorySprites[-1].height = 150 
+                hasCard = True 
             elif item == "claw": 
                 inventorySprites[-1].x = 600 
                 inventorySprites[-1].y = 500 
                 inventorySprites[-1].width = 150 
                 inventorySprites[-1].height = 150 
+                hasClaw = True
             elif item == "photo": 
                 inventorySprites[-1].x = 400
                 inventorySprites[-1].y = 700 
                 inventorySprites[-1].width = 150 
                 inventorySprites[-1].height = 150 
+                hasPhoto = True 
             
 
     show inventory bg
     call screen inventoryScene
+
