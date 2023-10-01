@@ -4,6 +4,7 @@ init python:
     def addToInventory(items): 
         for item in items: 
             inventoryItems.append(item)
+            SetVariable("has{}".format(item), True)
    
         for enitem in environmentSprites: 
             if  enitem.type == item: 

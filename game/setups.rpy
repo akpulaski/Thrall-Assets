@@ -1,6 +1,12 @@
 label generalSetUp: 
     default location = 2
     default info = 1  
+    default hasLock = False 
+    default hasCard = False 
+    default hasKey = False 
+    default hasClaw = False 
+    default hasPhoto = False 
+    default hasAll = False 
 
     python: 
         #Disables rollback because it messes with inventory system.
@@ -18,12 +24,6 @@ label generalSetUp:
         environmentItemNames = []
         inventoryItemNames = ["Key", "Lock", "Card", "Claw", "Photo"]
         environmentItemsDeleted = []
-
-        hasPhoto = False 
-        hasKey = False 
-        hasCard = False 
-        hasClaw = False 
-        hasLock = False 
 
         
 
@@ -209,7 +209,5 @@ label setUpInventory:
                 inventorySprites[-1].height = 150 
                 hasPhoto = True 
             
-
-    show inventory bg
     call screen inventoryScene
 
