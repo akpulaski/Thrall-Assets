@@ -295,19 +295,58 @@ screen navigation():
 
         spacing gui.navigation_spacing
 
-        if main_menu:
+        if renpy.get_screen("main_menu"): 
 
-            textbutton _("Start") action Start()
+            #textbutton _("Start") action Start()
+            fixed: 
+                imagebutton: 
+                    auto "gui/Main Menu UI/Start_%s.png"
+                    xpos 50 
+                    ypos 100
+                    action Start()
+
+                imagebutton: 
+                    auto "gui/Main Menu UI/Load_%s.png"
+                    xpos 50
+                    ypos 250 
+                    action ShowMenu("load")
+
+                imagebutton: 
+                    auto "gui/Main Menu UI/Options_%s.png"
+                    xpos 50
+                    ypos 400
+                    action ShowMenu("preferences")
+                
+                imagebutton: 
+                    auto "gui/Main Menu UI/Gallery_%s.png"
+                    xpos 50 
+                    ypos 550 
+                    action ShowMenu("gallery")
+                
+                imagebutton: 
+                    auto "gui/Main Menu UI/Endings_%s.png"
+                    xpos 50
+                    ypos 700
+                    action ShowMenu("endings")
+                
+                imagebutton: 
+                    auto "gui/Main Menu UI/Exit_%s.png"
+                    xpos 50 
+                    ypos 850 
+                    action Quit()
+
+
 
         else:
-
             textbutton _("History") action ShowMenu("history")
 
             textbutton _("Save") action ShowMenu("save")
 
-        textbutton _("Load") action ShowMenu("load")
+            textbutton _("Load") action ShowMenu("load")
 
-        textbutton _("Preferences") action ShowMenu("preferences")
+            textbutton _("Preferences") action ShowMenu("preferences")
+            
+            textbutton _("About") action ShowMenu("about")
 
         if _in_replay:
 
@@ -317,18 +356,14 @@ screen navigation():
 
             textbutton _("Main Menu") action MainMenu()
 
-        textbutton _("About") action ShowMenu("about")
 
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
-            ## Help isn't necessary or relevant to mobile devices.
-            textbutton _("Help") action ShowMenu("help")
-
-        if renpy.variant("pc"):
+            if renpy.variant("pc"):
 
             ## The quit button is banned on iOS and unnecessary on Android and
             ## Web.
-            textbutton _("Quit") action Quit(confirm=not main_menu)
+                textbutton _("Quit") action Quit(confirm=not main_menu)
 
 
 style navigation_button is gui_button
